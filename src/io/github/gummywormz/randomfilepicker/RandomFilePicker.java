@@ -76,6 +76,7 @@ public class RandomFilePicker extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         programBtn = new javax.swing.JButton();
         pickFile = new javax.swing.JButton();
+        clearBtn = new javax.swing.JButton();
 
         includeSub.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         includeSub.setTitle("Include Subfolders?");
@@ -214,6 +215,13 @@ public class RandomFilePicker extends javax.swing.JFrame {
             }
         });
 
+        clearBtn.setText("Clear");
+        clearBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -250,7 +258,8 @@ public class RandomFilePicker extends javax.swing.JFrame {
                             .addComponent(addFile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(delFile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(saveList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(openList, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(openList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(clearBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(18, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -279,7 +288,9 @@ public class RandomFilePicker extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(saveList)
                         .addGap(18, 18, 18)
-                        .addComponent(openList)))
+                        .addComponent(openList)
+                        .addGap(18, 18, 18)
+                        .addComponent(clearBtn)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(extensions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -427,6 +438,11 @@ public class RandomFilePicker extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_saveListChooserActionPerformed
 
+    private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
+        filePaths.clear();
+        model.clear();
+    }//GEN-LAST:event_clearBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -465,6 +481,7 @@ public class RandomFilePicker extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addFile;
     private javax.swing.JFileChooser addFileChooser;
+    private javax.swing.JButton clearBtn;
     private javax.swing.JButton delFile;
     private javax.swing.JTextField extensions;
     private javax.swing.JList fileList;

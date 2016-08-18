@@ -167,7 +167,8 @@
                           <Component id="addFile" max="32767" attributes="0"/>
                           <Component id="delFile" alignment="0" max="32767" attributes="0"/>
                           <Component id="saveList" alignment="0" max="32767" attributes="0"/>
-                          <Component id="openList" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
+                          <Component id="openList" alignment="0" max="32767" attributes="0"/>
+                          <Component id="clearBtn" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -206,6 +207,8 @@
                       <Component id="saveList" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="openList" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="clearBtn" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -344,6 +347,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pickFileActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="clearBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Clear"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearBtnActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
