@@ -13,6 +13,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Random;
 import javax.swing.DefaultListModel;
@@ -388,7 +389,12 @@ public class RandomFilePicker extends javax.swing.JFrame {
         }
         else
         {
-            ProcessBuilder p = new ProcessBuilder(program.getText(),prefix.getText(),fileToPick);
+            ArrayList<String> args = new ArrayList<>();
+            args.add(program.getText());
+            String[] args2 = prefix.getText().split(" ");
+            args.addAll(Arrays.asList(args2));
+            args.add(fileToPick);
+            ProcessBuilder p = new ProcessBuilder(args);
             try {
                 p.start();
             } catch (IOException ex) {
